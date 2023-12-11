@@ -1,6 +1,6 @@
 # Visit https://docs.rilldata.com/reference/project-files to learn more about Rill project files.
 
-title: "Customer Unit Economics Dashboard"
+title: "Pictarine Partner Economics"
 model: "metrics_margin_model"
 default_time_range: "P4W"
 smallest_time_grain: "day"
@@ -26,33 +26,18 @@ measures:
     name: measure_1
     description: "Net revenue divided by sum of revenue"
     format_preset: percentage
-  - label: "Unique Customers"
-    expression: "COUNT(DISTINCT company)"
+  - label: "No. of end customers"
+    expression: "SUM(no_of_customers)"
     name: measure_3
-    description: "The count of unique companies"
+    description: "The number of end customers"
     format_preset: humanize
 dimensions:
-  - label: Customer
+  - label: Partner
     property: company
-    description: "The name of the customer"
-  - label: Plan Name
-    property: plan_name
-    description: "The name of the billing plan"
+    description: "The name of the partner"
   - label: "Cost by Region"
     property: "location"
     description: "The region incurring costs"
-  - label: Cost by Component
+  - label: Cost by Department
     property: component
-    description: "The component generating costs"
-  - label: "Cost by App Name"
-    property: "app_name"
-    description: "The app generating costs"
-  - label: "Cost by SKU"
-    property: "sku_description"
-    description: "The sku description for costs"
-  - label: "Cost by Data Pipeline"
-    property: "pipeline"
-    description: "The pipeline incurring costs"
-  - label: "Cost by Environment"
-    property: "environment"
-    description: "The environment incurring costs"
+    description: "The department generating costs"
